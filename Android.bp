@@ -345,6 +345,17 @@ android_app_import {
 }
 
 android_app_import {
+	name: "colorservice",
+	owner: "oneplus",
+	apk: "proprietary/system_ext/app/colorservice/colorservice.apk",
+	certificate: "platform",
+	dex_preopt: {
+		enabled: false,
+	},
+	system_ext_specific: true,
+}
+
+android_app_import {
 	name: "embms",
 	owner: "oneplus",
 	apk: "proprietary/system_ext/app/embms/embms.apk",
@@ -453,6 +464,13 @@ dex_import {
 	name: "com.android.hotwordenrollment.common.util",
 	owner: "oneplus",
 	jars: ["proprietary/product/framework/com.android.hotwordenrollment.common.util.jar"],
+	product_specific: true,
+}
+
+dex_import {
+	name: "com.qti.snapdragon.sdk.display",
+	owner: "oneplus",
+	jars: ["proprietary/product/framework/com.qti.snapdragon.sdk.display.jar"],
 	product_specific: true,
 }
 
@@ -1117,36 +1135,9 @@ prebuilt_etc_xml {
 }
 
 prebuilt_etc_xml {
-	name: "manifest_oplus_cwb",
-	owner: "oneplus",
-	src: "proprietary/odm/etc/vintf/manifest/manifest_oplus_cwb.xml",
-	filename_from_src: true,
-	sub_dir: "vintf/manifest",
-	device_specific: true,
-}
-
-prebuilt_etc_xml {
 	name: "manifest_oplus_fingerprint",
 	owner: "oneplus",
 	src: "proprietary/odm/etc/vintf/manifest/manifest_oplus_fingerprint.xml",
-	filename_from_src: true,
-	sub_dir: "vintf/manifest",
-	device_specific: true,
-}
-
-prebuilt_etc_xml {
-	name: "vendor.pixelworks.hardware.display.iris-service",
-	owner: "oneplus",
-	src: "proprietary/odm/etc/vintf/manifest/vendor.pixelworks.hardware.display.iris-service.xml",
-	filename_from_src: true,
-	sub_dir: "vintf/manifest",
-	device_specific: true,
-}
-
-prebuilt_etc_xml {
-	name: "vendor.pixelworks.hardware.feature.irisfeature-service",
-	owner: "oneplus",
-	src: "proprietary/odm/etc/vintf/manifest/vendor.pixelworks.hardware.feature.irisfeature-service.xml",
 	filename_from_src: true,
 	sub_dir: "vintf/manifest",
 	device_specific: true,
